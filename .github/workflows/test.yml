@@ -1,0 +1,62 @@
+name: Schedule based smart-bench tests of pallet-contracts and pallet-evm
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  download_and_test_parachain_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Moonbeam Release 
+        id: moonbeam_release
+        run: |
+          API_URL="https://api.github.com/repos/karolk91/moonbeam/releases/latest"
+          RESPONSE=$(curl -s "${API_URL}")
+
+          # Get the download URL of the release binary from Repo
+          DOWNLOAD_URL=$(echo $RESPONSE | jq -r '.assets | map(select(.name == moonbeam)) | .[0].browser_download_url')
+          RELEASE_TAG=$(echo $RESPONSE | jq -r '.tag_name')
+
+          mkdir -p bin
+          curl -L -o bin/moonbeam ${DOWNLOAD_URL} && chmod +x bin/moonbeam
+          echo "::set-output name=tag::$(echo ${RELEASE_TAG})"
+      - name: Download Polkadot-Parachain Release
+        id: polkadot_parachain_release
+        run: |
+          API_URL="https://api.github.com/repos/paritytech/cumulus/releases/latest"
+          RESPONSE=$(curl -s "${API_URL}")
+
+          # Get the download URL of the release binary from Repo
+          DOWNLOAD_URL=$(echo $RESPONSE | jq -r '.assets | map(select(.name == polkadot-parachain)) | .[0].browser_download_url')
+          RELEASE_TAG=$(echo $RESPONSE | jq -r '.tag_name')
+
+          mkdir -p bin
+          curl -L -o bin/polkadot-parachain ${DOWNLOAD_URL} && chmod +x bin/polkadot-parachain
+          echo "::set-output name=tag::$(echo ${RELEASE_TAG})"
+          # We need polkadot version to check compatibility and commit sha
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Display variables
+        run: |
+          echo moonbeam_tag: ${{ steps.moonbeam_release.outputs.tag }}
+          echo polkadot_parachain_tag: ${{ steps.polkadot_parachain_release.outputs.tag }}
+
+      - name: Execute tests
+        id: run_smart_bench
+        run: |
+          # ink solang and solidity versions to be printed
+          RELEASE_COMMIT_SHA=$(echo ${{ github.event.client_payload }} | jq -r '.sha')
+          INPUT_POLKADOT_VERSION=$(echo ${{ github.event.client_payload }} | jq -r '.polkadot_version')
+          cd smart-bench/launch
+          ./downloads-bins.sh
+          # overwrite polkadot-parachain and moonbeam
+          cp ../../bin/* ./bin
+          ./build.sh
+          ./run.sh --binaries-dir=../../bin -- ink-wasm erc20 --instance-count 1 --call-count 10
+          ./run.sh --binaries-dir=../../bin -- sol-wasm erc20 --instance-count 1 --call-count 10
+          ./run.sh --binaries-dir=../../bin -- evm erc20 --instance-count 1 --call-count 10
+
+
