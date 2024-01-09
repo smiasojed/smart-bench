@@ -202,11 +202,16 @@ jobs:
         run: |
           cat ${{ env.BENCHMARK_DIR }}/*/*.csv >> ${{ env.BENCHMARK_DIR }}/${{ env.BENCHMARK_FILE }}
 
+      - name: Generate graph
+        run: |
+          cd stats
+          ./get_graph.sh --panel-id 2 --csv-data benchmark-result.csv --output ${{ env.BENCHMARK_DIR }}/tps.png
+
       - name: Commit benchmark stats
         run: |
           CURRENT_DATE=$(date +"%Y%m%d")
           git config user.email "paritytech-ci@parity.io"
           git config user.name "paritytech-ci"
-          git add ${{ env.BENCHMARK_DIR }}/${{ env.BENCHMARK_FILE }}
+          git add ${{ env.BENCHMARK_DIR }}/${{ env.BENCHMARK_FILE }} ${{ env.BENCHMARK_DIR }}/tps.png
           git commit -m "Add benchmark results on ${CURRENT_DATE}"
           git push
