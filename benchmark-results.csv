@@ -1,2 +1,5 @@
 
 
+1709886900, evm, , erc20, 341, solc 0.8.1, --instance-count 1 --call-count 1000
+1709886930, ink-wasm, v1.0.0, erc20, 186, ink! 4.3.0, --instance-count 1 --call-count 1000
+1709886942, sol-wasm, v1.0.0, erc20, 170, Solidity 0.3.2, --instance-count 1 --call-count 1000
