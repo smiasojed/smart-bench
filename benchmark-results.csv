@@ -1,9 +1,3 @@
-1710252180, evm, v0.34.1, erc20, 408, solc 0.8.1, --instance-count 1 --call-count 1000
-1710252234, ink-wasm, v1.0.0, erc20, 186, ink! 4.3.0, --instance-count 1 --call-count 1000
-1710252240, sol-wasm, v1.0.0, erc20, 170, Solidity 0.3.2, --instance-count 1 --call-count 1000
-1710283518, evm, v0.34.1, erc20, 408, solc 0.8.1, --instance-count 1 --call-count 1000
-1710283572, ink-wasm, v1.0.0, erc20, 186, ink! 4.3.0, --instance-count 1 --call-count 1000
-1710283572, sol-wasm, v1.0.0, erc20, 170, Solidity 0.3.2, --instance-count 1 --call-count 1000
-1710326784, evm, v0.34.1, erc20, 408, solc 0.8.1, --instance-count 1 --call-count 1000
-1710326808, ink-wasm, v1.0.0, erc20, 186, ink! 4.3.0, --instance-count 1 --call-count 1000
-1710326826, sol-wasm, v1.0.0, erc20, 170, Solidity 0.3.2, --instance-count 1 --call-count 1000
+1710328182, evm, v0.34.1, erc20, 341, solc 0.8.1, --instance-count 1 --call-count 1000
+1710328218, ink-wasm, v1.0.0, erc20, 186, ink! 4.3.0, --instance-count 1 --call-count 1000
+1710328254, sol-wasm, v1.0.0, erc20, 170, Solidity 0.3.2, --instance-count 1 --call-count 1000
