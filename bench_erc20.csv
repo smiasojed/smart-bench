@@ -103,3 +103,6 @@
 1713839490, evm, v0.34.1, erc20, 341, solc 0.8.1, --instance-count 1 --call-count 1000
 1713839520, ink-wasm, v1.0.0, erc20, 186, ink! 4.3.0, --instance-count 1 --call-count 1000
 1713839526, sol-wasm, v1.0.0, erc20, 170, Solidity 0.3.2, --instance-count 1 --call-count 1000
+1714081572, evm, mon, erc20, 11, solc 0.8.1, --instance-count 1 --call-count 1000
+1714081572, ink-wasm, v1.0.0, erc20, 10, ink! 4.3.0, --instance-count 1 --call-count 1000
+1714081614, sol-wasm, v1.0.0, erc20, 8, Solidity 0.3.2, --instance-count 1 --call-count 1000
