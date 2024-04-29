@@ -4,3 +4,6 @@
 1714426866, evm, moon, erc20, 23, solc 0.8.1, --instance-count 1 --call-count 2000
 1714426830, ink-wasm, polkadot-v1.7.0, erc20, 22, ink! 4.3.0, --instance-count 1 --call-count 2000
 1714426776, sol-wasm, polkadot-v1.7.0, erc20, 33, Solidity 0.3.2, --instance-count 1 --call-count 2000
+1714428372, evm, moon, erc20, 23, solc 0.8.1, --instance-count 1 --call-count 2000
+1714428318, ink-wasm, polkadot-v1.7.0, erc20, 22, ink! 4.3.0, --instance-count 1 --call-count 2000
+1714428276, sol-wasm, polkadot-v1.7.0, erc20, 33, Solidity 0.3.2, --instance-count 1 --call-count 2000
