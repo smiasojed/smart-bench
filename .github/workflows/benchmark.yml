@@ -80,8 +80,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ env.VERSION }}
 
       - name: Cache
         uses: Swatinem/rust-cache@v2
@@ -211,8 +209,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ env.VERSION }}
 
       - name: Download artifact
         uses: actions/download-artifact@v3
