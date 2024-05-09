@@ -34,3 +34,6 @@
 1715130937, evm, moon, flipper, 28, solc 0.8.1, --instance-count 1 --call-count 2000
 1715130876, ink-wasm, polkadot-v1.7.0, flipper, 24, ink! 4.3.0, --instance-count 1 --call-count 2000
 1715130900, sol-wasm, polkadot-v1.7.0, flipper, 27, Solidity 0.3.2, --instance-count 1 --call-count 2000
+1715218152, evm, moon, flipper, 27, solc 0.8.1, --instance-count 1 --call-count 2000
+1715218080, ink-wasm, polkadot-v1.7.0, flipper, 24, ink! 4.3.0, --instance-count 1 --call-count 2000
+1715218086, sol-wasm, polkadot-v1.7.0, flipper, 24, Solidity 0.3.2, --instance-count 1 --call-count 2000
