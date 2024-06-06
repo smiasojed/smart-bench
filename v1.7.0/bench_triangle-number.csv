@@ -112,3 +112,6 @@
 1717551624, evm, moon, triangle-number, 4, solc 0.8.1, --instance-count 1 --call-count 2000
 1717551102, ink-wasm, polkadot-v1.7.0, triangle-number, 30, ink! 4.3.0, --instance-count 1 --call-count 2000
 1717551090, sol-wasm, polkadot-v1.7.0, triangle-number, 24, Solidity 0.3.2, --instance-count 1 --call-count 2000
+1717637976, evm, moon, triangle-number, 4, solc 0.8.1, --instance-count 1 --call-count 2000
+1717637472, ink-wasm, polkadot-v1.7.0, triangle-number, 30, ink! 4.3.0, --instance-count 1 --call-count 2000
+1717637508, sol-wasm, polkadot-v1.7.0, triangle-number, 22, Solidity 0.3.2, --instance-count 1 --call-count 2000
