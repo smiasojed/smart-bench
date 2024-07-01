@@ -181,3 +181,6 @@
 1719712044, evm, moon, storage-write, 22, solc 0.8.1, --instance-count 1 --call-count 2000
 1719712134, ink-wasm, polkadot-v1.7.0, storage-write, 7, ink! 4.3.0, --instance-count 1 --call-count 2000
 1719712104, sol-wasm, polkadot-v1.7.0, storage-write, 8, Solidity 0.3.2, --instance-count 1 --call-count 2000
+1719798606, evm, moon, storage-write, 21, solc 0.8.1, --instance-count 1 --call-count 2000
+1719798696, ink-wasm, polkadot-v1.7.0, storage-write, 7, ink! 4.3.0, --instance-count 1 --call-count 2000
+1719798678, sol-wasm, polkadot-v1.7.0, storage-write, 8, Solidity 0.3.2, --instance-count 1 --call-count 2000
